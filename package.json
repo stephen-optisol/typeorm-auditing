@@ -1,6 +1,6 @@
 {
   "name": "typeorm-global-audit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeORM global Audit: Create history of all tables and manage changes of those entity automatically.",
   "homepage": "https://github.com/stephen-optisol/typeorm-auditing",
   "repository": {
