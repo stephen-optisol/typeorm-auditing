@@ -1,11 +1,11 @@
 {
-  "name": "typeorm-auditing",
-  "version": "0.5.6",
-  "description": "TypeORM Auditing: Create history tables and manage changes of entity automatically.",
-  "homepage": "https://github.com/kibae/typeorm-auditing",
+  "name": "typeorm-global-audit",
+  "version": "0.0.1",
+  "description": "TypeORM global Audit: Create history of all tables and manage changes of those entity automatically.",
+  "homepage": "https://github.com/stephen-optisol/typeorm-auditing",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kibae/typeorm-auditing.git"
+    "url": "https://github.com/stephen-optisol/typeorm-auditing.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,10 +18,9 @@
   "keywords": [
     "TypeORM",
     "Decorator",
-    "Auditing",
+    "Audit",
     "History"
   ],
-  "author": "Kibae Shin <kibae.shin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^28.1.6",
