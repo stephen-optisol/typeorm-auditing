@@ -1,11 +1,11 @@
 {
-  "name": "typeorm-global-audit",
-  "version": "0.0.2",
+  "name": "@stephen-optisol/typeorm-audit",
+  "version": "0.0.1",
   "description": "TypeORM global Audit: Create history of all tables and manage changes of those entity automatically.",
   "homepage": "https://github.com/stephen-optisol/typeorm-auditing",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stephen-optisol/typeorm-auditing.git"
+    "url": "git+https://github.com/stephen-optisol/typeorm-auditing.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -66,5 +66,9 @@
     ],
     "maxConcurrency": 1,
     "maxWorkers": 1
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/stephen-optisol/typeorm-auditing/issues"
+  },
+  "author": ""
 }

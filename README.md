@@ -1,19 +1,18 @@
 # TypeORM Auditing(Decorator)
 - Create history tables and manage changes of entity automatically
 
-[![Node.js CI](https://github.com/kibae/typeorm-auditing/actions/workflows/node.js.yml/badge.svg)](https://github.com/kibae/typeorm-auditing/actions/workflows/node.js.yml)
-[![NPM Version](https://badge.fury.io/js/typeorm-auditing.svg)](https://www.npmjs.com/package/typeorm-auditing)
-[![License](https://img.shields.io/github/license/kibae/typeorm-auditing)](https://github.com/kibae/typeorm-auditing/blob/main/LICENSE)
+[![NPM Version](https://badge.fury.io/js/@stephen-optisol/typeorm-audit.svg)](https://www.npmjs.com/package/@stephen-optisol/typeorm-audit)
+[![License](https://img.shields.io/github/license/@stephen-optisol/typeorm-audit)](https://github.com/@stephen-optisol/typeorm-audit/blob/main/LICENSE)
 
 ## Install
 - NPM
 ```shell
-$ npm install typeorm-auditing --save
+$ npm install @stephen-optisol/typeorm-audit --save
 ```
 
 - Yarn
 ```shell
-$ yarn add typeorm-auditing
+$ yarn add @stephen-optisol/typeorm-audit
 ```
 
 ----
@@ -48,7 +47,7 @@ export class User extends MyBase {
   - *In order to easily define columns, extended the User entity.*
 - **@AuditingEntity(*TargetEntity*)** decorator automatically creates a table with **_seq**, **_action(*Create, Update, Delete*)** and **_modifiedAt** columns.
 ```typescript
-import { AuditingAction, AuditingEntity, AuditingEntityDefaultColumns } from 'typeorm-auditing'; 
+import { AuditingAction, AuditingEntity, AuditingEntityDefaultColumns } from '@stephen-optisol/typeorm-audit'; 
 
 @AuditingEntity(User)
 // @AuditingEntity(User, { ...overrideUserEntitiesEntityOption, database: 'my-database', schema: 'my-schema' })
@@ -67,7 +66,7 @@ export class AuditingUser extends User implements AuditingEntityDefaultColumns {
 - You only need to configure it once for multiple entities.
 - However, if there are multiple data sources, you need to set them up for each data source.
 ```typescript
-import { AuditingSubscriber } from 'typeorm-auditing';
+import { AuditingSubscriber } from '@stephen-optisol/typeorm-audit';
 
 const dataSource = new DataSource({
     ...yourDataSourceConfig,
@@ -76,23 +75,15 @@ const dataSource = new DataSource({
     subscribers: [AuditingSubscriber],
 })
 ```
-
-----
-
-## Contributors
-<a href="https://github.com/kibae/typeorm-auditing/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kibae/typeorm-auditing" />
-</a>
-
 ----
 
 ## Example
 
-### [Sample Code](https://github.com/kibae/typeorm-auditing/blob/main/src/test/auditing-entity.decorator.example.ts)
+### [Sample Code](https://github.com/@stephen-optisol/typeorm-audit/blob/main/src/test/auditing-entity.decorator.example.ts)
 ```typescript
 import { DataSource } from 'typeorm';
 import { Case1, Case1Audit } from './entity/case1';
-import { AuditingSubscriber } from 'typeorm-auditing';
+import { AuditingSubscriber } from '@stephen-optisol/typeorm-audit';
 
 (async function () {
     //Data Source
@@ -126,7 +117,7 @@ import { AuditingSubscriber } from 'typeorm-auditing';
 })();
 ```
 
-### [Sample Entity](https://github.com/kibae/typeorm-auditing/blob/main/src/test/entity/case1.ts)
+### [Sample Entity](https://github.com/@stephen-optisol/typeorm-audit/blob/main/src/test/entity/case1.ts)
 - Origin Entity
 ```typescript
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
@@ -149,7 +140,7 @@ export class Case1 extends BaseEntity {
 
 - Audit Entity
 ```typescript
-import { AuditingAction, AuditingEntity, AuditingEntityDefaultColumns } from 'typeorm-auditing';
+import { AuditingAction, AuditingEntity, AuditingEntityDefaultColumns } from '@stephen-optisol/typeorm-audit';
 
 @AuditingEntity(Case1)
 export class Case1Audit extends Case1 implements AuditingEntityDefaultColumns {
